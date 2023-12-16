@@ -5,5 +5,25 @@
 
 body {
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
+html[data-theme="light"] {
+    --port-primary-bg: #fff;
+    --port-primary-second: rgba(249, 249, 249, .5);
+    --port-font-main: #2d2e32;
+    --port-font-second: #7b7b7b;
+    --hover-bg: hsl(210,40%,96.1%);
+}
+
+html[data-theme="dark"] {
+    --port-primary-bg: #191919;
+    --port-primary-second: rgba(38, 38, 38);
+    /* --port-primary-bg: #18181b;
+    --port-primary-second: #0e0e10; */
+    --port-font-main: #efeff1;
+    --port-font-second: #7b7b7b;
+    --hover-bg: hsl(204, 5%, 20%);
+
+}

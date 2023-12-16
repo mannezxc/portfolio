@@ -10,14 +10,23 @@ const Projects: FC = () => {
     h-full
     flex
     justify-center
-    bg-[#f9f9f9]
+    bg-[--port-primary-bg]
+    text-[--port-font-main]
+    transition-[background]
+    duration-300
     '>
         <Container
             classNames='
-            flex 
-            justify-center
+            grid
+            grid-cols-2
+            gap-8
+            max-[550px]:grid-cols-1
+            min-[900px]:grid-cols-3
             '
         >
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
             <ProjectCard />
         </Container>
     </section>
