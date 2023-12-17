@@ -12,6 +12,9 @@ function App() {
             <Presentation/>
             <About/>
             <Projects/>
+            <footer>
+                
+            </footer>
         </main>
     </>
 }
