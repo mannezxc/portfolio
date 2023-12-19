@@ -10,8 +10,8 @@ const Header: FC = () => {
             flex 
             justify-center
             bg-[--port-primary-second]
-            backdrop-blur-sm
-            py-5
+            backdrop-blur-sm 
+            py-6
             px-16
             font-semibold 
             text-[18px] 
@@ -19,6 +19,7 @@ const Header: FC = () => {
             text-[--port-font-main]
             transition-[background]
             duration-300
+            z-10
             ">
         <Container
             classNames='flex justify-between'

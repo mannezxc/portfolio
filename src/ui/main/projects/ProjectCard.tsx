@@ -6,6 +6,7 @@ import { FC } from 'react'
 type Stack = "React TS" | "React JS" | "Tailwind" | "SCSS" | "CSS" | "Next" | ""
 
 export type ProjectCardType = {
+    id: number
     thumbnail: string
     app_name: string
     description: string
@@ -13,8 +14,8 @@ export type ProjectCardType = {
     link_git: string
     link_web: string
     color: string
+    tr?: number
 }
-
 
 
 const ProjectCard: FC<ProjectCardType> = ({
@@ -24,8 +25,13 @@ const ProjectCard: FC<ProjectCardType> = ({
     link_web,
     stack,
     thumbnail,
-    color
+    tr = null
 }) => {
+    
+    const translatey = {
+        60: 'group-hover:-translate-y-[60px]',
+        115: 'group-hover:-translate-y-[115px]',
+    }
     return <div className={`
     flex 
     flex-col
@@ -37,20 +43,35 @@ const ProjectCard: FC<ProjectCardType> = ({
     transition-[box-shadow,transform,background]
     project-card
     hover:bg-[#f1f1f1]
-    hover:-translate-y-2
+    group
     `}>
         <div className='
         max-w-[240px]
-        w-full
+        max-h-[140px]
+        h-full
+
+        rounded-[8px]
+        overflow-hidden
         '>
-            <img className='
+            {!!thumbnail.length ? <img className={`
             shadow-[0_7px_12px_rgba(0,0,0,.12)]
             rounded-[8px] 
             object-cover
             w-full
-            h-full
+            ${!!translatey[tr] ? translatey[tr] : ''}
+            transition-[transform]
+            duration-[1500ms]
             overflow-hidden    
-            ' src={thumbnail} alt="" />
+            `}
+                src={thumbnail} alt="" />
+                : <div className='
+            bg-slate-200
+            w-[240px]
+            h-[135px]
+            rounded-[8px] 
+            animate-pulse
+            '
+                />}
         </div>
         <div className='
         flex 
@@ -62,18 +83,40 @@ const ProjectCard: FC<ProjectCardType> = ({
         py-3
         px-1
         '>
-            <h3 className='
+            {!!app_name ? <h3 className='
             font-medium 
             text-[18px]
             '>
                 {app_name}
             </h3>
-            <p className='
+                :
+                <div className='
+            h-[20px]
+            w-full
+            mb-[7px]
+            rounded-[8px] 
+            animate-pulse
+            bg-slate-200
+            '/>
+            }
+
+            {!!description ? <p className='
             text-[14px]
             mb-4
             '>
                 {description}
             </p>
+                :
+            <div className='
+            h-[20px]
+            w-28
+            mb-4
+            rounded-[8px] 
+            animate-pulse
+            bg-slate-200
+            '/>
+            }
+
             <div className='
             flex 
             flex-col 
@@ -120,7 +163,7 @@ const ProjectCard: FC<ProjectCardType> = ({
                     '>
                         GitHub
                     </a>
-                    <a href={link_git} className='
+                    <a href={link_web} className='
                     px-3.5
                     py-[3px]
                     bg-[--port-primary-bg]

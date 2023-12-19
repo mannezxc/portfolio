@@ -1,16 +1,8 @@
 import { FC } from 'react'
 import ProjectCard, { ProjectCardType } from './ProjectCard'
-import Container from '../Container'
+import { projects } from '../../../../projects'
+// import projects from '../../../../projects'
 
-const pdefault: ProjectCardType = {
-    thumbnail: "https://www.codewithantonio.com/_next/image?url=https%3A%2F%2Futfs.io%2Ff%2F34030399-8018-4b2b-928d-b978bfe20202-5k5p0a.png&w=2048&q=75",
-    app_name: "Fullstack Typing",
-    description: "typing app",
-    stack: ["React TS", "Tailwind"],
-    link_git: "/",
-    link_web: "/",
-    color: 'f4eeff'
-}
 
 const Projects: FC = () => {
     return <section className='
@@ -46,11 +38,7 @@ const Projects: FC = () => {
             max-[900px]:grid-cols-3
             grid-cols-4
             '>
-                <ProjectCard {...pdefault} />
-                <ProjectCard {...pdefault} />
-                <ProjectCard {...pdefault} />
-                <ProjectCard {...pdefault} />
-                <ProjectCard {...pdefault} />
+                {projects.map(project => <ProjectCard {...project} />)}
             </div>
         </div>
     </section>
