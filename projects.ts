@@ -8,7 +8,6 @@ export const projects: ProjectCardType[] = [
         description: "typing app",
         stack: ["React JS", "SCSS"],
         link_git: "/",
-        link_web: "/",
         color: 'f4eeff',
         tr: 0
     },
@@ -19,7 +18,6 @@ export const projects: ProjectCardType[] = [
         description: "typing app",
         stack: ["React TS", "Tailwind"],
         link_git: "/",
-        link_web: "/",
         color: 'f4eeff',
         tr: 0
     },
@@ -28,22 +26,22 @@ export const projects: ProjectCardType[] = [
         thumbnail: "/manne-pizza.vercel.app_.png",
         app_name: "Pizza",
         description: "typing app",
-        stack: ["React TS", "Tailwind"],
+        stack: ["Next", "SCSS"],
         link_git: "/",
         link_web: "https://manne-pizza.vercel.app",
         color: 'f4eeff',
-        tr: 60
+        tr: 52
     },
     {
         id: 4,
         thumbnail: "/sneaker-market.vercel.app_.png",
         app_name: "Sneakers",
         description: "typing app",
-        stack: ["React TS", "Tailwind"],
+        stack: ["React JS", "SCSS"],
         link_git: "/",
-        link_web: "/",
+        link_web: "https://sneaker-market.vercel.app",
         color: 'f4eeff',
-        tr: 115
+        tr: 112
     },
     {
         id: 5,
@@ -52,7 +50,6 @@ export const projects: ProjectCardType[] = [
         description: "typing app",
         stack: ["React TS", "Tailwind"],
         link_git: "/",
-        link_web: "/",
         color: 'f4eeff',
         tr: 0
     },

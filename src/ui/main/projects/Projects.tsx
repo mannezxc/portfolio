@@ -33,10 +33,9 @@ const Projects: FC = () => {
             </h2>
             <div className='
             grid
-            gap-4
-            max-[550px]:grid-cols-1
-            max-[900px]:grid-cols-3
-            grid-cols-4
+            grid-cols-2
+            gap-x-12
+            gap-y-4
             '>
                 {projects.map(project => <ProjectCard {...project} />)}
             </div>
@@ -45,3 +44,9 @@ const Projects: FC = () => {
 }
 
 export default Projects
+
+// grid
+// gap - 4
+// max - [550px]: grid - cols - 1
+// max - [900px]: grid - cols - 3
+// grid - cols - 4
